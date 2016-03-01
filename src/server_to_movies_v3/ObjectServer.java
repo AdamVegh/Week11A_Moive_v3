@@ -18,9 +18,10 @@ import client_to_movies_v3.RentManager.Command;
 
 public class ObjectServer {
 	
-	enum ServerMode { LOAD, SAVE }
+	static ServerMode serverMode; 
 	
 	public static Object load() {
+		serverMode = ServerMode.LOAD;
 		List<Object> objList = new ArrayList<>();
 		try {
 			FileInputStream fileIn = new FileInputStream("output.ser");
